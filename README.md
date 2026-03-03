@@ -1,6 +1,7 @@
 # 📉 Customer Churn Analysis — Telecom
 
 > End-to-end data analysis project identifying at-risk customers using behavioral patterns and predictive modeling.
+> live demo customerchurnanalysis2.netlify.app
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-2.0-green?style=flat-square)
