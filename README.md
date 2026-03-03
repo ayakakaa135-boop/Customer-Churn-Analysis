@@ -1,65 +1,130 @@
-# 📉 Corporate Customer Churn Intelligence System
+# 📉 Customer Churn Analysis — Telecom
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.30-FF4B4B.svg)](https://streamlit.io)
-[![License](https://img.shields.io/badge/License-Corporate_Portfolio-green.svg)](https://opensource.org/licenses/MIT)
+> End-to-end data analysis project identifying at-risk customers using behavioral patterns and predictive modeling.
 
-## 📌 Executive Summary
-Customer churn is one of the most critical threats to profitability in the telecom industry. This project delivers an **end-to-end AI-powered solution** to identify, analyze, and retain high-value customers.
-
-By combining **Machine Learning (Logistic Regression)** with an **Advanced Analytical Data Model (Star Schema)**, this system provides actionable insights through a premium interactive dashboard.
+![Python](https://img.shields.io/badge/Python-3.10-blue?style=flat-square&logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-2.0-green?style=flat-square)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3-orange?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)
 
 ---
 
-## 🛠️ Tech Stack & Architecture
-- **Data Engineering:** Star Schema Implementation (Fact & Dimension Tables in Excel/Python).
-- **Analytics Engine:** Scikit-Learn for Predictive Risk Scoring.
-- **Reporting:** **Streamlit + Plotly** (High-end interactive dashboard).
-- **Environment:** Unified via `requirements.txt` for enterprise portability.
+## 🎯 Business Problem
+
+Customer churn costs telecom companies billions annually. Acquiring a new customer costs **5–7x more** than retaining an existing one. This project answers:
+
+- What is our churn rate and how does it compare to industry benchmarks?
+- Which customers are most likely to churn, and why?
+- Can we predict churn with enough accuracy to enable proactive retention?
+- What business actions should we take?
 
 ---
 
-## 🚀 Deployment Instructions
+## 📊 Key Findings
 
-### 1. Environment Setup
-Clone this repository and install necessary libraries:
+| Metric | Value |
+|--------|-------|
+| Overall Churn Rate | **26.5%** (industry avg: ~18%) |
+| Highest Risk Segment | Month-to-month contracts (**42% churn**) |
+| Critical Retention Window | First **12 months** (63% of all churn) |
+| Estimated Revenue at Risk | **$435K/year** |
+
+### 🔑 Top Insights
+- **Contract type** is the strongest churn predictor — month-to-month customers churn at 5x the rate of two-year customers
+- **Fiber optic** users have surprisingly high churn (41.9%) despite being a premium service
+- Customers **without tech support** are 2.7x more likely to churn
+- **Electronic check** payment method correlates strongly with churn (45.3%)
+
+---
+
+## 🤖 Model Performance
+
+| Metric | Score |
+|--------|-------|
+| Accuracy | 82.1% |
+| AUC-ROC | 0.847 |
+| Precision | 79.3% |
+| Recall | 76.8% |
+| F1-Score | 78.0% |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python** — Core analysis
+- **Pandas & NumPy** — Data manipulation
+- **Matplotlib & Seaborn** — Visualization
+- **Scikit-learn** — Machine learning
+- **Jupyter Notebook** — Interactive analysis
+
+---
+
+## 📁 Project Structure
+
+```
+customer-churn-analysis/
+│
+├── data/
+│   └── WA_Fn-UseC_-Telco-Customer-Churn.csv    # Dataset (Kaggle)
+│
+├── notebooks/
+│   └── customer_churn_analysis.ipynb            # Main analysis notebook
+│
+├── outputs/
+│   ├── at_risk_customers.csv                    # Model predictions
+│   └── figures/                                 # All visualizations
+│
+├── dashboard/
+│   └── customer_churn_dashboard.html            # Interactive dashboard
+│
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🚀 Getting Started
+
 ```bash
+# Clone the repo
+git clone https://github.com/yourusername/customer-churn-analysis.git
+cd customer-churn-analysis
+
+# Install dependencies
 pip install -r requirements.txt
-```
 
-### 2. Generate Data Model (If needed)
-The system uses a pre-calculated star schema model. If you modify the source data, refresh the model:
-```bash
-python notebooks/build_data_model.py
-```
+# Download dataset from Kaggle
+# https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+# Place in data/ folder
 
-### 3. Launch Intelligence Dashboard
-Run the professional Streamlit application:
-```bash
-streamlit run dashboard/app.py
+# Launch notebook
+jupyter notebook notebooks/customer_churn_analysis.ipynb
 ```
 
 ---
 
-## 📊 Dashboard Modules
+## 💡 Business Recommendations
 
-### 1. Executive Overview
-Real-time tracking of:
-- **Churn Rate:** Benchmarked against industry standards.
-- **Revenue at Risk:** The financial impact of projected churn.
-- **Retention Performance:** Gauge-based KPI tracking.
-
-### 2. Churn Driver Analysis
-Identification of behavioral patterns:
-- **Contract Impact:** Monthly vs. Multi-year churn dynamics.
-- **Internet Service:** Quality-to-Churn correlation.
-- **Pricing:** Behavioral shifts based on monthly billing amounts.
-
-### 3. Smart Risk Segmentation
-An actionable list of customers for the retention team:
-- **Risk Tiers:** Tiering customers into High, Medium, and Low risk cohorts.
-- **Action Plans:** Specific recommendations for each risk level.
-- **Financial Simulation:** Real-time ROI calculation of retention efforts.
+1. **Launch contract upgrade campaign** — offer 15% discount for month-to-month → annual upgrade
+2. **90-day onboarding program** — personalized check-ins for first-year customers
+3. **Tech support bundle** — include free 3-month tech support with new fiber sign-ups
+4. **Auto-pay incentive** — 5% discount for switching from electronic check
 
 ---
-*Developed for a Business Intelligence Portfolio. Dataset: IBM Telco Customer Churn.*
+
+## 📈 Next Steps
+
+- [ ] Experiment with Random Forest & XGBoost for improved accuracy
+- [ ] Add SHAP values for model explainability
+- [ ] Build real-time scoring API (FastAPI)
+- [ ] Deploy interactive Streamlit dashboard
+
+---
+
+## 📄 Dataset
+
+IBM Telco Customer Churn — available on [Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+
+---
+
+*Built as part of my data analytics portfolio. Feel free to fork and use!*
